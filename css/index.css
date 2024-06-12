@@ -1,0 +1,844 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+@font-face {
+  font-family: 'GoryeongStrawberry';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{scroll-behavior: smooth;}
+
+body{color: #333;}
+
+/* Top Button */
+.top{
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 9999;
+}
+.top a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: yellowgreen;
+  color: #fff;
+  text-transform: uppercase;
+}
+.top a:hover{background-color: green;}
+
+/* Header ________________ */
+header{
+  width: 100%;
+  background-color: #ebbe25;
+}
+
+/* 로고&네비게이션바 */
+nav{
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  z-index: 99999;
+  /* position: fixed; */
+}
+
+#nav_in{
+  /* border: 1px solid red; */
+  width: 1280px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+  /* border: 1px solid #000; */
+  background: url(../image/logo.png) no-repeat left center;
+  width: 100%;
+  height: inherit;
+  margin-left: 50px;
+  background-size: 144px 36px;
+}
+.gnb{display: flex;}
+.gnb li{
+  /* border: 1px solid #000; */
+  width: 90px;
+  height: inherit;
+  line-height: 100px;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-right: 50px;
+  font-family: 'GoryeongStrawberry';
+  font-weight: normal;
+}
+.gnb li:before{ /* 바나나 우유 */
+  /* border: 1px solid #000; */
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 64px;
+  background: url(../image/h_banana_milk.png) no-repeat center bottom;
+  transition: 0.5s;
+}
+.gnb li:hover:before{top: 60px;}
+.gnb li a{
+  background: rgba(0,0,0,0);
+  border-radius: 20px;
+  transition: 0.5s;
+  padding: 5px 10px;
+}
+.gnb li:hover a{background: rgba(247, 105, 105, 0.3);}
+
+/* 비주얼이미지 ________________ */
+.main_img{
+  /* border: 1px solid #000; */
+  width: 1280px;
+  height: 704px;
+  margin: auto;
+  padding-top: 100px;
+  background-image: url(../image/banana.jpg);
+  position: relative;
+}
+.main_img .main{
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.main_img .fa-solid{
+  width: 42px;
+  height: 42px;
+  background-color: rgba(253, 222, 138, 0.7);
+  color: #fff;
+  border-radius: 50%;
+  line-height: 42px;
+  text-align: center;
+  transition: 0.3s;
+  top: 250px;
+  left: 130px;
+  animation: icon-ani 2s infinite;
+  border: 1px solid rgba(199, 152, 0, 0.5);
+}
+.main_img .img1{
+  top: 250px;
+  left: 50px;
+  width: 205px;
+  height: 67px;
+}
+.main_img .img2{
+  top: 570px;
+  left: 90px;
+  width: 173px;
+  height: 158px;
+}
+.main_img .img3{
+  top: 200px;
+  left: 600px;
+  width: 145px;
+  height: 220px;
+}
+.main_img .img4{
+  top: 200px;
+  right: 80px;
+  width: 99px;
+  height: 105px;
+}
+.main_img .img5{
+  bottom: -10px;
+  right: -20px;
+  width: 318px;
+  height: 329px;
+}
+
+.main:hover .fa-solid{opacity: 0;}
+.img1:hover{
+  background: url(../image/melona_original.png) no-repeat center;
+  animation: img-ani 2s infinite alternate;
+}
+.img2:hover{
+  background: url(../image/together_original.png) no-repeat center;
+  animation: img-ani 2s infinite alternate;
+}
+.img3:hover{
+  background: url(../image/banana_milk.png) no-repeat center;
+  animation: img-ani 2s infinite alternate;
+}
+.img4:hover{
+  background: url(../image/yo_strawberry.png) no-repeat center;
+  animation: img-ani 2s infinite alternate;
+}
+.img5:hover{
+  background: url(../image/snak.png) no-repeat center;
+  animation: img-ani 2s infinite alternate;
+}
+
+@keyframes img-ani{
+  0%{transform: rotate(0);}
+  25%{transform: rotate(15deg);}
+  75%{transform: rotate(-15deg);}
+  100%{transform: rotate(0);}
+}
+@keyframes icon-ani{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+/* section ________________ */
+/* 회사소개 content1 */
+#company{
+  width: 100%;
+  height: 1400px;
+  display: inline-block;
+  /* border: 1px solid #000; */
+}
+.company_title{
+  width: 580px;
+  height: 44px;
+  font-size: 20px;
+  margin: 190px auto 100px;
+  background-color: #ffe8e8;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 20px;
+}
+
+/* 경영이념 */
+.ideas{
+  /* border: 1px solid #000; */
+  width: 1280px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 135px auto;
+}
+.idea{
+  width: 372px;
+  height: 248px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.capption{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding-top: 70px;
+  box-sizing: border-box;
+  line-height: 24px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.capption h3{
+  color: yellow;
+  font-size: 30px;
+  padding-bottom: 25px;
+}
+.idea:hover .capption{opacity: 1;}
+.idea:hover{box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+
+/* 사상 */
+.company_thought{
+  width: 1280px;
+  height: 648px;
+  margin: auto;
+  background-image: url(../image/smile.jpg);
+  position: relative;
+}
+.thought1{
+  color: #fff;
+  font-weight: bold;
+  width: 1280px;
+  height: 148px;
+  background: rgba(0,0,0,0.7);
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.7s;
+  position: absolute;
+  line-height: 30px;
+}
+.thought1 strong{color: orange;}
+.company_thought:hover .thought1{opacity: 0;}
+.thought2{
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  width: inherit;
+  height: 518px;
+  padding-top: 130px;
+  opacity: 0;
+  transition: 1s;
+}
+.thought2 p{
+  display: block;
+  margin: 60px 0;
+  font-size: 18px;
+}
+.thought2 p:first-of-type{
+  background-color: orange;
+  width: 400px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 20px;
+  margin: 70px auto;
+}
+.thought2 span strong{color: orange;}
+.thought2:hover{opacity: 1;}
+
+/* 제품소개 */
+@keyframes product_ani1{
+  0%{top: 0; left: 0;}
+  50%{top: 0; left: calc(100% - 950px);}
+  100%{top: 0; left: 0;}
+}
+@keyframes product_ani2{
+  0%{top: 170px; left: calc(100% - 950px);}
+  50%{top: 170px; left: 0;}
+  100%{top: 170px; left: calc(100% - 950px);}
+}
+
+#product{
+  width: 100%;
+  height: 1410px;
+  background-color: #FFFFEE;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  padding-top: 190px;
+}
+.product_title{
+  /* border: 1px solid #000; */
+  width: 294px;
+  height: 64px;
+  border-radius: 20px;
+  line-height: 64px;
+  margin: auto;
+  background-color: #FFE8E8;
+  font-size: 35px;
+  font-family: 'GoryeongStrawberry';
+  font-weight: normal;
+}
+.item_list{
+  margin: 100px auto;
+  /* border: 1px solid #000; */
+  width: 1100px;
+  height: 340px;
+  position: relative;
+}
+.item_list .items{
+  /* border: 1px solid #000; */
+  width: 950px;
+  position: absolute;
+}
+.items:nth-of-type(1){animation: product_ani1 20s infinite;}
+.items:nth-of-type(2){animation: product_ani2 20s infinite;}
+.item{
+  display: inline-block;
+  width: 124px;
+  height: 124px;
+  line-height: 124px;
+  margin: 20px 30px;
+  font-weight: bold;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.7s;
+}
+.item strong{
+  opacity: 0;
+  transition: 1s;
+}
+.item:hover strong{opacity: 1;}
+.item:hover{
+  background: rgba(193, 193, 193, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.items:hover{animation-play-state: paused; }
+
+.ice{background-image: url(../image/icecream.png);}
+.milk{background-image: url(../image/milk.png);}
+.yogurt{background-image: url(../image/yogurt.png);}
+.coffee{background-image: url(../image/coffee.png);}
+.juce{background-image: url(../image/juce.png);}
+.drink{background-image: url(../image/drink.png);}
+.dessert{background-image: url(../image/dessert.png);}
+.health{background-image: url(../image/health.png);}
+.export{background-image: url(../image/export.png);}
+
+/* 제품검색 */
+.item_search h3{
+  font-size: 24px;
+  margin-bottom: 42px;
+}
+.search_bar{
+  /* border: 1px solid #000;  */
+  width: 571px;
+  height: 42px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search_bar input{
+  width: 484px;
+  height: 42px;
+  padding-left: 70px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.search_bar input[type=search]{
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding-right: 20px;
+}
+.search_bar input::placeholder{color: #999;}
+.search_bar input:focus::placeholder{opacity: 0;}
+.search_bar .fa-solid{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 15px;
+  left: 40px;
+  font-size: 15px;
+  color: #999;
+}
+.item_search button{
+  border: none;
+  width: 70px;
+  height: inherit;
+  border-radius: 20px;
+  background-color: orange;
+  color: #fff;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.item_search button:hover{
+  cursor: pointer;
+  background-color: orangered;
+}
+
+/* 제품설명 */
+.item_explain{
+  margin: 72px auto 86px;
+  width: 1075px;
+  height: 485px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.left{flex: 1;}
+.right{flex: 1;}
+.left img{
+  display: block;
+  margin: 0 auto 80px;
+}
+.left span{
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  margin-left: 130px;
+}
+/* .right{border: 1px solid #000;} */
+.right p{
+  margin: 16px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  width: 393px;
+  height: 44px;
+  line-height: 44px;
+  font-weight: bold;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.right p:hover{
+  background-color: rgba(255, 152, 152, 0.7);
+}
+.right table{
+  margin-top: 60px;
+  width: 435px;
+  height: 144px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-collapse: collapse;
+}
+.right table tr td:nth-child(2n+1){background-color: #ffebb7;}
+
+/* SNS */
+#sns{
+  /* border: 1px solid #000; */
+  width: 100%;
+  height: 797px;
+  background: url(../image/SNS_bg.jpg) repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+.youtube_link{
+  display: block;
+  border-radius: 10px;
+  width: 874px;
+  height: 508px;
+  background: url(../image/youtobe.png) no-repeat center;
+  position: relative;
+}
+.youtube_link:before{
+  content: '\f167';
+  font-family: fontawesome;
+  font-size: 100px;
+  color: rgb(190, 1, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* iframe{
+  border-radius: 10px;
+  width: 789px;
+  height: 444px;
+} */
+.sns_btn{
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.sns_btn a{
+  width: 282px;
+  height: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 45px;
+  background-color: #ff3c3c;
+  border-radius: 20px;
+  margin: 62px 35px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.sns_btn a:last-of-type{background-color: rgba(255, 15, 15, 0.6);}
+.sns_btn a:hover{box-shadow: none;}
+
+/* 뉴스 */
+#news{
+  width: 100%;
+  height: 900px;
+  background-color: #fffeee;
+  text-align: center;
+  padding-top: 190px;
+}
+.news_title h2{
+  width: 352px;
+  height: 64px;
+  border-radius: 20px;
+  line-height: 64px;
+  margin: auto;
+  background-color: #FFE8E8;
+  font-size: 35px;
+  font-family: 'GoryeongStrawberry';
+  font-weight: normal;
+}
+.news_title h3{
+  margin: 80px 0;
+  font-size: 33px;
+  font-family: "Gamja Flower", sans-serif;
+}
+.news_title h3 strong:last-child{color: rgb(255, 39, 39);}
+.news_title h3 strong:first-child{color: royalblue;}
+.news_img{
+  /* border: 1px solid #000; */
+  width: 1030px;
+  height: 598px;
+  text-align: center;
+  margin: 60px auto;
+  background: url(../image/story-banana.png) no-repeat center;
+  border-radius: 20px;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.news_text{
+  opacity: 0;
+  transition: 0.5s;
+  color: #222;
+  /* font-weight: 600; */
+  /* font-family: "Gamja Flower", sans-serif; */
+  font-family: "Nanum Pen Script", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.news1{
+  font-size: 32px;
+  margin-top: 51px;
+}
+.news1 strong{color: #ff2121;}
+.news2{
+  display: inline-block;
+  font-size: 25px;
+  margin-top: 410px;
+  line-height: 30px;
+}
+.news2 strong{color: #0066ff;}
+.news_img:hover{background-image: url(../image/story-bananaworld.png)}
+.news_img:hover .news_text{opacity: 1;}
+
+/* 고객센터 */
+/* 자주하는 질문 */
+#service{
+  width: 100%;
+  height: 1069px;
+  background-color: #fffeee;
+  padding-top: 190px;
+}
+.service_title{
+  width: 352px;
+  height: 64px;
+  border-radius: 20px;
+  line-height: 64px;
+  margin: auto;
+  background-color: #FFE8E8;
+  font-size: 35px;
+  text-align: center;
+  font-family: 'GoryeongStrawberry';
+  font-weight: normal;
+}
+.quest{
+  width: 1030px;
+  height: 603px;
+  background-color: #fff;
+  margin: 68px auto 0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0 10px;
+  box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.quest li{
+  /* border: 1px solid #000; */
+  flex: 1;
+  transition: 0.5s;
+}
+.quest li:hover{flex: 3;}
+.content{
+  /* border: 1px solid #000; */
+  width: 750px;
+  height: 100px;
+  position: relative;;
+  overflow: hidden;
+  transition: 0.7s;
+}
+.content h3{
+  color: #666;
+  transition: 0.7s;
+}
+.content h3:before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 750px;
+  border: 1px solid #999;
+}
+.content h3 .fa-solid:first-of-type{margin: 0 27px 0 5px}
+.content h3 .fa-solid:last-of-type{
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  transform: translateY(-10%);
+  transition: 0.3s;
+}
+.content p{
+  position: absolute;
+  width: inherit;
+  top: 80px;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  background-color: #fffcc5;
+  border-radius: 10px;
+  padding: 15px 0;
+  transition: 0.5s;
+}
+.content a{display: block;}
+.content strong{color: darkorange; transition: 0.5s;}
+
+.content:hover{height: 200px;}
+.content:hover strong{color: red;}
+.quest li:hover .content h3{color: #333;}
+.quest li:hover .content p{opacity: 1;}
+.quest li:hover .content h3 .fa-solid:last-of-type{transform: rotate(90deg);}
+
+/* 문의 */
+.consult{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+.consult .tel{
+  /* border: 1px solid #000; */
+  width: 450px;
+  height: 130px;
+  position: relative;
+  border-radius: 20px;
+  background-color: #fdf3f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.17) 0px 3px 6px;
+  transition: 0.3s;
+}
+.consult .tel:before{
+  content: '';
+  background-image: url(../image/icon2.png);
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 97px;
+  height: 96px;
+  position: absolute;
+}
+.consult .tel span{
+  margin-left: 45px;
+  font-weight: bold;
+}
+.consult .tel span strong{
+  font-size: 20px;
+  margin-right: 10px;
+}
+.consult .tel span:first-child{font-size: 14px;}
+.consult .tel span:last-child{font-size: 32px;}
+.consult .tel:hover{box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+
+.consult .email{
+  /* border: 1px solid #000; */
+  width: 394px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  margin-left: 33px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.17) 0px 3px 6px;
+  transition: 0.3s;
+}
+.consult .email:before{
+  content: '';
+  background-image: url(../image/icon1.png);
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 95px;
+  height: 73px;
+  position: absolute;
+}
+.consult .email span{
+  font-weight: bold;
+  margin-left: 57px;
+}
+.consult .email span:first-child{font-size: 20px;}
+.consult .email span:last-child{font-size: 32px;}
+.consult .email:hover{box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+
+/* Footer ________________ */
+footer{
+  width: 100%;
+  height: 242px;
+  background-color: #444;
+}
+.ft{
+  /* border: 1px solid #000; */
+  width: 1280px;
+  height: inherit;
+  margin: auto;
+  position: relative;
+}
+.ft_text{margin-left: 46px;}
+.ft_text .f_logo{
+  display: inline-block;
+  width: 147px;
+  height: 40px;
+  background: url(../image/f_logo.png) no-repeat center;
+  margin: 46px 0 22px;
+}
+.ft_text address span{
+  display: block;
+  color: #8f8f8f;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.ft_text address span:nth-of-type(2){color: #aeaeae;}
+.ft_text address span:nth-of-type(3){
+  color: #aeaeae;
+  font-size: 14px;
+}
+.ft_text address span:last-of-type{font-size: 13px;}
+.ft_text address span a:hover{
+  color: royalblue;
+  font-weight: bold;
+}
+
+/* sns */
+.f_sns{
+  /* border: 1px solid #000; */
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+}
+.f_sns a{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  margin-left: 20px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.f_sns .instagram{padding-top: 2px;}
+.f_sns .tft_mall{padding: 2px 1px 0 0;}
+.f_sns .naver_blog{padding-top: 7px;}
+.f_sns .instagram:hover{background-color: rgba(255, 39, 165, 0.8);}
+.f_sns .youtube:hover{background-color: rgba(255, 33, 33, 0.8);}
+.f_sns .tft_mall:hover{background-color: rgba(255, 173, 21, 0.8)}
+.f_sns .naver_blog:hover{background-color: rgba(0, 124, 37, 0.8);}
